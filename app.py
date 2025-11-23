@@ -8,8 +8,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, r2_score
 
 # Load dataset
-df = pd.read_csv("StudentPerformanceFactors.csv")
-
+df = pd.read_excel("StudentPerformanceFactors.xlsx")
 # Page config
 st.set_page_config(
     page_title="Student Performance Predictor",
@@ -183,3 +182,4 @@ elif page == "Exam Score Estimation":
         new_data = pd.DataFrame({"Hours_Studied": [study_hours]})
         score = model.predict(new_data)[0]
         st.success(f"Estimated Exam Score: {score:.2f}")
+
